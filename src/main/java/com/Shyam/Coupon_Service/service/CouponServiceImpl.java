@@ -52,7 +52,7 @@ public class CouponServiceImpl implements CouponService {
         context.setOrder(orderDetails);
 
         // Validations ( Chain Of Responsibility )
-        couponValidator.validateCoupon(ruleFactory.generateRule(),context,coupon);
+        couponValidator.validateCoupon(ruleFactory.generateRule(), context, coupon);
 
         DiscountStrategy strategy = discountStrategyFactory.getStrategy(coupon);
         double discountValue = strategy.calculateDiscountAmount(orderDetails.getTotalAmount());

@@ -35,7 +35,7 @@ public class Coupon {
     public Coupon() {
     }
 
-    public Coupon(Long id, DiscountType discountType, String code , double discountValue, Double maxDiscount, boolean stackable, List<String> allowedCategory, Set<PaymentType> allowedPaymentMethods) {
+    public Coupon(Long id, DiscountType discountType, String code, double discountValue, Double maxDiscount, boolean stackable, List<String> allowedCategory, Set<PaymentType> allowedPaymentMethods) {
         this.id = id;
         this.discountType = discountType;
         this.discountValue = discountValue;

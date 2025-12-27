@@ -1,6 +1,6 @@
 package com.Shyam.Coupon_Service.strategy;
 
-public class FlatDiscount implements DiscountStrategy{
+public class FlatDiscount implements DiscountStrategy {
 
     private final double discount;
 

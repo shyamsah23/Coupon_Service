@@ -7,7 +7,7 @@ import com.Shyam.Coupon_Service.strategy.PercentageDiscountStrategy;
 
 public class DiscountStrategyFactory {
 
-    public DiscountStrategy getStrategy (Coupon coupon) {
+    public DiscountStrategy getStrategy(Coupon coupon) {
         return switch (coupon.getDiscountType()) {
             case FLAT -> new PercentageDiscountStrategy(coupon.getDiscountValue(), coupon.getMaxDiscount());
             case PERCENT -> new FlatDiscount(coupon.getDiscountValue());

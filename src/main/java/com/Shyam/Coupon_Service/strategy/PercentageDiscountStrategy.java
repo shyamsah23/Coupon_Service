@@ -1,6 +1,6 @@
 package com.Shyam.Coupon_Service.strategy;
 
-public class PercentageDiscountStrategy implements DiscountStrategy{
+public class PercentageDiscountStrategy implements DiscountStrategy {
 
     private final double percent;
     private final double maxDiscount;
@@ -12,6 +12,6 @@ public class PercentageDiscountStrategy implements DiscountStrategy{
 
 
     public double calculateDiscountAmount(double amount) {
-        return Math.max(amount*percent/100 , maxDiscount);
+        return Math.max(amount * percent / 100, maxDiscount);
     }
 }
