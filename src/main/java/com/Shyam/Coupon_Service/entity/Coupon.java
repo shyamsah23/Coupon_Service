@@ -18,6 +18,9 @@ public class Coupon {
     @Enumerated(EnumType.STRING)
     private DiscountType discountType;
 
+    @Column(unique = true)
+    private String code;
+
     private double discountValue;
     private Double maxDiscount;
     private boolean stackable;
@@ -32,7 +35,7 @@ public class Coupon {
     public Coupon() {
     }
 
-    public Coupon(Long id, DiscountType discountType, double discountValue, Double maxDiscount, boolean stackable, List<String> allowedCategory, Set<PaymentType> allowedPaymentMethods) {
+    public Coupon(Long id, DiscountType discountType, String code , double discountValue, Double maxDiscount, boolean stackable, List<String> allowedCategory, Set<PaymentType> allowedPaymentMethods) {
         this.id = id;
         this.discountType = discountType;
         this.discountValue = discountValue;
@@ -40,6 +43,7 @@ public class Coupon {
         this.stackable = stackable;
         this.allowedCategory = allowedCategory;
         this.allowedPaymentMethods = allowedPaymentMethods;
+        this.code = code;
     }
 
     public Long getId() {
@@ -96,5 +100,13 @@ public class Coupon {
 
     public void setAllowedPaymentMethods(Set<PaymentType> allowedPaymentMethods) {
         this.allowedPaymentMethods = allowedPaymentMethods;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
