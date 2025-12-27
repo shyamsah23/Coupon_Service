@@ -14,6 +14,7 @@ import com.Shyam.Coupon_Service.repository.CouponUsageRepository;
 import com.Shyam.Coupon_Service.strategy.DiscountStrategy;
 import com.Shyam.Coupon_Service.validator.CouponValidator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -37,7 +38,7 @@ public class CouponServiceImpl implements CouponService {
         this.couponValidator = new CouponValidator();
     }
 
-
+    @Transactional
     public double applyCoupon(ApplyCouponRequestDTO requestDTO) {
 
         OrderSummaryDTO orderDetails = orderServiceFeignClient.getOrderDetails(requestDTO.getOrderId());
